@@ -1,0 +1,70 @@
+.react-alertify-container {
+    visibility: hidden;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    &.active {
+        visibility: visible;
+        .react-alertify { transform: translateY(0); }
+    }
+}
+    .react-alertify {
+        position: relative;
+        z-index: 1;
+        width: 375px;
+        margin: 0 auto;
+        padding: 30px 20px 20px 20px;
+        border-radius: 0 0 3px 3px;
+        background: #fff;
+        transform: translateY(-100%);
+
+        transition: transform 200ms ease;
+    }
+        .react-alertify-content {
+            .react-alertify-title {
+                margin-bottom: 0.6rem;
+            }
+            .react-alertify-message {
+                margin-bottom: 0.6rem;
+            }
+            .react-alertify-nav {
+                padding-top: 10px;
+
+                // clearfix
+                &:after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+
+            .react-alertify-btn {
+                // lonely button
+                &[data-single] {
+                    display: block;
+                    width: 100%;
+                    min-width: 115px;
+                }
+
+                // buttons side-by-side
+                &[data-double] {
+                    &:first-child { float: left; }
+                    &:last-child { float: right; }
+                }
+            }
+        }
+
+.react-alertify-mask {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
