@@ -18,7 +18,7 @@ const generateByType = type => {
 		})
 		.args(String, Object)
 		.use(function(title, obj) {
-			return alert(Object.assign({ type }, obj));
+			return alert(Object.assign({ type, title }, obj));
 		})
 		.args(String, String, Object)
 		.use(function(title, message, obj) {
